@@ -22,7 +22,7 @@ def upcoming_set(set):
   return set_release_date is not None and set_release_date > todays_date()
 
 def todays_date():
-  return datetime.now().date() - timedelta(days=30) # This is, obviously, not correct at the moment.
+  return datetime.now().date()
 
 def set_code(set):
   return set['code']

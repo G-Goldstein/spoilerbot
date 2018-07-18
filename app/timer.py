@@ -1,7 +1,7 @@
 import time
 from datetime import datetime, timedelta
 
-interval_minutes = 1
+interval_minutes = 15
 
 def minutes_until_next_time():
   now = datetime.now()

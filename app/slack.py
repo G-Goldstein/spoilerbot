@@ -1,7 +1,7 @@
 import requests, os, json, puns
 
-funny_set_channel = '@ggoldstein'
-main_set_channel = '@ggoldstein'
+funny_set_channel = os.environ['FUN_CHANNEL']
+main_set_channel = os.environ['MAIN_CHANNEL']
 
 SLACK_WEBHOOK_URL = os.environ['SLACK_WEBHOOK_URL']
 
