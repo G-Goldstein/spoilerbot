@@ -1,6 +1,6 @@
 FROM python:3.5
 
-RUN mkdir /app && \
+RUN mkdir -p /app/spoiled && \
   useradd -m spoiler && \
   chown -R spoiler:spoiler /app
 

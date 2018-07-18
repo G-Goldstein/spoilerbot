@@ -1,7 +1,6 @@
 import requests, time
-from datetime import datetime, timedelta
+from datetime import datetime
 
-never_post_card_names = ['Forest', 'Island', 'Mountain', 'Plains', 'Swamp']
 never_post_set_types = ['promo', 'token']
 funny_set_types = ['commander', 'funny', 'draft_innovation']
 

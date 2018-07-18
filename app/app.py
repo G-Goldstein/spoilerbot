@@ -1,5 +1,7 @@
 import scryfall, spoiled, slack, timer
 
+never_post_card_names = ['Forest', 'Island', 'Mountain', 'Plains', 'Swamp']
+
 def spoil_cards(set, cards):
   card_tags = ['[[{}]]'.format(card['name']) for card in cards]
   message = '{}: {}'.format(set['name'], ', '.join(card_tags))
@@ -8,7 +10,7 @@ def spoil_cards(set, cards):
 def spoil_new_cards():
   for set in scryfall.upcoming_sets():
     set_code = set['code']
-    new_spoilers = [card for card in scryfall.spoiled_cards(set_code) if card['name'] not in spoiled.previously_spoiled_names(set_code)][:5]
+    new_spoilers = [card for card in scryfall.spoiled_cards(set_code) if card['name'] not in spoiled.previously_spoiled_names(set_code) and card['name'] not in never_post_card_names][:5]
     try:
       spoil_cards(set, new_spoilers)
     except:
