@@ -13,7 +13,7 @@ choices = [
 ('Scry Terror', 'https://scentofagamer.files.wordpress.com/2017/11/johannbodin_skyterror.jpg'),
 ('Scryknight Legionnaire', 'https://media-dominaria.cursecdn.com/attachments/103/61/635032499073490380.jpg'),
 ('Scrywatcher Adept', 'https://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/wallpapers/WP_SkywatcherAdept_2560x1600.jpg'),
-('Scrywise Teachings', 'https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1109131.png'),
+('Scrywise Teachings', 'https://vignette.wikia.nocookie.net/gamelore/images/b/bb/Skywise_Teachings.jpg/revision/latest'),
 ('Talrand, Scry Summoner', 'https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/thumb/f/f1/Talrand.jpg/1200px-Talrand.jpg'),
 ]
 
