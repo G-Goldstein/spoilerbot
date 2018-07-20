@@ -12,8 +12,8 @@ RUN pip3.5 install -r requirements.txt
 
 USER spoiler
 
-EXPOSE 5000
+ENTRYPOINT ["python"]
 
-CMD ["python", "app.py"]
+CMD ["app.py"]
 
 COPY --chown=spoiler:spoiler app/ /app/
