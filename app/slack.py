@@ -12,7 +12,7 @@ def set_channel(funny_channel):
 
 def post(message, is_funny):
   payload = {}
-  payload['channel_id'] = set_channel(is_funny)
+  payload['channel'] = set_channel(is_funny)
   payload['text'] = message
   payload['username'], payload['icon_url'] = puns.select_bot()
   data = {'payload': json.dumps(payload)}
