@@ -29,7 +29,7 @@ def set_code(set):
   return set['code']
 
 def funny_set(set):
-  return set in funny_set_types
+  return set['set_type'] in funny_set_types
 
 def release_date(set):
   if 'released_at' not in set:
