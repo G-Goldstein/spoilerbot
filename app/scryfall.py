@@ -6,7 +6,10 @@ funny_set_types = ['commander', 'funny', 'draft_innovation']
 
 def get(url, data=None):
   time.sleep(0.5) # Don't overload the Scryfall API
-  response = requests.get(url, params=data).json()
+  try:
+    response = requests.get(url, params=data).json()
+  except:
+    return []
   if 'data' not in response:
     return []
   response_list = response['data']
