@@ -14,14 +14,14 @@ def make_attachment_from_card(card):
     lines.append('*Loyalty: ' + card['loyalty'] + '*')
   attachment['text'] = '\n'.join(lines)
   attachment['mrkdwn_in'] = ['text']
-  attachment['footer'] = card['set_name'] + ' #' + card['collector_number']
-  attachment['color'] = frame_color(card['colors'])
+  attachment['footer'] = card['set_name'] + ' #' + card['collector_number'] + '  -  ' + card['rarity'].capitalize()
+  # attachment['color'] = frame_color(card['colors']) This doesn't look good.
   return attachment
 
 def manaify(string):
   return re.sub(r'{([^}]*)}',
          r':mana-\1:',
-	 string)
+	 string).replace('/', '')
 
 def frame_color(colors):
   if len(colors) == 0:
