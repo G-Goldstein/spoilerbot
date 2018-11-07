@@ -19,9 +19,12 @@ def make_attachment_from_card(card):
   return attachment
 
 def manaify(string):
+  without_mana_symbol_slashes = re.sub(r'({\w)/(\w})',
+                                       r'\1\2',
+                                       string)
   return re.sub(r'{([^}]*)}',
-         r':mana-\1:',
-	 string).replace('/', '')
+                r':mana-\1:',
+	        without_mana_symbol_slashes)
 
 def frame_color(colors):
   if len(colors) == 0:
