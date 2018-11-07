@@ -15,9 +15,27 @@ def make_attachment_from_card(card):
   attachment['text'] = '\n'.join(lines)
   attachment['mrkdwn_in'] = ['text']
   attachment['footer'] = card['set_name'] + ' #' + card['collector_number']
+  attachment['color'] = frame_color(card['colors'])
   return attachment
 
 def manaify(string):
   return re.sub(r'{([^}]*)}',
          r':mana-\1:',
 	 string)
+
+def frame_color(colors):
+  if len(colors) == 0:
+    return None
+  if len(colors) > 1:
+    return '#ffdf00'
+  if colors[0] == 'W':
+    return '#dfdfdf'
+  if colors[0] == 'B':
+    return '#dfdfdf'
+  if colors[0] == 'U':
+    return 'dfdfff#'
+  if colors[0] == 'R':
+    return '#ffdfdf'
+  if colors[0] == 'G':
+    return '#dfffdf'
+  return None
