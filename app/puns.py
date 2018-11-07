@@ -15,6 +15,7 @@ choices = [
 ('Scrywatcher Adept', 'https://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/wallpapers/WP_SkywatcherAdept_2560x1600.jpg'),
 ('Scrywise Teachings', 'https://vignette.wikia.nocookie.net/gamelore/images/b/bb/Skywise_Teachings.jpg/revision/latest'),
 ('Talrand, Scry Summoner', 'https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/thumb/f/f1/Talrand.jpg/1200px-Talrand.jpg'),
+("Liliana's Spoils", 'https://scontent-atl3-1.cdninstagram.com/vp/f33fbf8474b9d223fdecb770fa90c692/5C4D6308/t51.2885-15/e35/36632015_214997215822817_4962910190283259904_n.jpg'),
 ]
 
 def select_bot():
