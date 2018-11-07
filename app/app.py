@@ -3,9 +3,10 @@ import scryfall, spoiled, slack, timer, time
 never_post_card_names = ['Forest', 'Island', 'Mountain', 'Plains', 'Swamp']
 
 def spoil_cards(set, cards):
-  card_tags = ['[[{}]]'.format(card['name']) for card in cards]
-  message = '{}: {}'.format(set['name'], ', '.join(card_tags))
-  slack.post(message, is_funny=scryfall.funny_set(set))
+  attachments = []
+  for card in cards:
+    attachments.append(slack.make_attachment_from_card(card))
+  slack.post_attachments(attachments, is_funny=scryfall.funny_set(set))
 
 def spoil_new_cards():
   upcoming_sets = scryfall.upcoming_sets()
@@ -13,15 +14,15 @@ def spoil_new_cards():
     time.sleep(60*60*4) # No new sets, check again in 4 hours
   for set in upcoming_sets:
     set_code = set['code']
-    new_spoilers = [card for card in scryfall.spoiled_cards(set_code) if card['name'] not in spoiled.previously_spoiled_names(set_code) and card['name'] not in never_post_card_names][:5]
+    new_spoilers = [card for card in scryfall.spoiled_cards(set_code) if card['name'] not in spoiled.previously_spoiled_names(set_code) and card['name'] not in never_post_card_names][:2]
     if not new_spoilers:
       continue
-    try:
-      spoil_cards(set, new_spoilers)
-    except:
-      print('Something went wrong')
-    else:
-      spoiled.store_spoiled_cards(set_code, new_spoilers) 
+    #try:   ### Put this back in after debugging.
+    spoil_cards(set, new_spoilers)
+    #except:
+    #  print('Something went wrong')
+    #else:
+    #  spoiled.store_spoiled_cards(set_code, new_spoilers) 
 
 if __name__ == '__main__':
   while True:
