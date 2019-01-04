@@ -11,7 +11,7 @@ def make_attachment_from_card(card):
     face_lines = []
     if lines:
       face_lines.append('*' + face['name'] + '* ' + manaify(face['mana_cost']))
-      face_lines.append(face['type_line'])
+    face_lines.append(face['type_line'])
     face_lines.append(manaify(face['oracle_text']))
     if 'flavor_text' in face:
       face_lines.append('\n'.join(map(lambda s: '_' + s + '_', face['flavor_text'].split('\n'))))
