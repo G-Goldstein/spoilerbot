@@ -1,7 +1,7 @@
 import requests, time
 from datetime import datetime
 
-never_post_set_types = ['promo', 'token']
+never_post_set_types = ['promo', 'token', 'box']
 funny_set_types = ['commander', 'funny', 'draft_innovation']
 
 def get(url, data=None):
