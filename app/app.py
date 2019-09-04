@@ -5,8 +5,11 @@ never_post_card_names = ['Forest', 'Island', 'Mountain', 'Plains', 'Swamp']
 def spoil_cards(set, cards):
   attachments = []
   for card in cards:
+    print('Formatting {}'.format(card['name']))
     attachments.append(scryfall_to_slack.make_attachment_from_card(card))
+  print('Posting {}'.format(', '.join(card['name'] for card in cards)))
   slack.post_attachments(attachments, is_funny=scryfall.funny_set(set))
+  print('Successfully posted')
 
 def spoil_new_cards():
   upcoming_sets = scryfall.upcoming_sets()
