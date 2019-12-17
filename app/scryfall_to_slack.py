@@ -5,9 +5,10 @@ def make_attachment_from_card(card):
   card_faces = list(faces(card))
   attachment['title'] = card_faces[0]['name'] + ' ' + manaify(card_faces[0]['mana_cost'])
   attachment['title_link'] = card['scryfall_uri']
-  attachment['thumb_url'] = card['image_uris']['small']
   lines = []
   for face in card_faces:
+    if 'thumb_url' not in attachment:
+      attachment['thumb_url'] = face['image_uris']['small']
     face_lines = []
     if lines:
       face_lines.append('*' + face['name'] + '* ' + manaify(face['mana_cost']))
